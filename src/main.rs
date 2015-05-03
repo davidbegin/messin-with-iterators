@@ -9,6 +9,7 @@ mod print_stuff;
 use std::collections::VecDeque;
 use std::collections::HashMap;
 
+#[derive(Eq, PartialEq, Debug)]
 enum UserType { Regular, Guest, Admin }
 
 struct User {
@@ -49,5 +50,11 @@ fn main() {
         least_points.unwrap().name,
         least_points.unwrap().cool_points
     );
+
+    let cool_people_eh = users.iter().all(|user| user.cool_points > 0);
+    println!("Is everyone here cool: {}", cool_people_eh);
+
+    let admin_eh = users.iter().any(|user| user.user_type == UserType::Admin);
+    println!("Is there an admin here: {}", admin_eh);
 
 }
