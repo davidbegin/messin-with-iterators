@@ -3,10 +3,45 @@
 
 extern crate type_printer;
 
+mod print_stuff;
+
 use std::collections::VecDeque;
+use std::collections::HashMap;
 
 fn main() {
-    vec_duke_city();
+    number_hash_mapper();
+}
+
+fn number_hash_mapper() {
+    let mut numbers = HashMap::<i32, i32>::new();
+    numbers.insert(1, 10);
+    numbers.insert(2, 20);
+    numbers.insert(3, 30);
+    numbers.insert(5, 40);
+    numbers.insert(5, 50);
+
+    let iterator = numbers.iter();
+    let mapped = iterator.map(|(&x, &y)| (x + 10, y + 100));
+    let output = mapped.collect::<Vec<_>>();
+    println!("{:?}", output);
+}
+
+fn hash_map_metropolis() {
+    let mut cities = HashMap::<&str, &str>::new();
+    cities.insert("Hyderabad", "India");
+    cities.insert("Navacerrada", "Spain");
+    cities.insert("Zabrze", "Poland");
+    cities.insert("Ampfing", "Germany");
+
+    print_stuff::seperator();
+
+    for city in cities.iter() {
+        println!("City Entry: {:?}", city);
+    }
+
+    print_stuff::seperator();
+
+    println!("All Cities: {:?}", cities);
 }
 
 fn vec_duke_city() {
