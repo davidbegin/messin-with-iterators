@@ -9,8 +9,24 @@ use std::collections::VecDeque;
 use std::collections::HashMap;
 
 fn main() {
-    number_hash_mapper();
+    let iterator = CountUp { current: 10 };
+    let output = iterator.take(200).collect::<Vec<_>>();
+    println!("{:?}", output);
 }
+
+struct CountUp {
+    current: usize
+}
+
+impl Iterator for CountUp {
+    type Item = usize;
+
+    fn next(&mut self) -> Option<usize> {
+        self.current += 1;
+        Some(self.current)
+    }
+}
+
 
 fn number_hash_mapper() {
     let mut numbers = HashMap::<i32, i32>::new();
