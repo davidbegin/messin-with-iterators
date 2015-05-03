@@ -9,6 +9,26 @@ mod print_stuff;
 use std::collections::VecDeque;
 use std::collections::HashMap;
 
+fn main() {
+    let input = 0..10;
+    let output = input
+        .filter(|&x| x % 2 == 0)
+        .map(|x| x * 2)
+        .fold(0, |accumlator, item| accumlator + item);
+
+    let input2 = 0..10;
+    let output2 = input2
+        .fold(0, |accumlator, item| {
+            if item % 2 == 0 {
+                accumlator + item * 2
+            } else {
+                accumlator
+            }
+        });
+
+    assert_eq!(output, output2);
+}
+
 #[derive(Eq, PartialEq, Debug)]
 enum UserType { Regular, Guest, Admin }
 
@@ -18,7 +38,7 @@ struct User {
     cool_points: i32,
 }
 
-fn main() {
+fn users() {
     let users = [
         User {
             name: "Bill".to_string(),
@@ -56,5 +76,4 @@ fn main() {
 
     let admin_eh = users.iter().any(|user| user.user_type == UserType::Admin);
     println!("Is there an admin here: {}", admin_eh);
-
 }
