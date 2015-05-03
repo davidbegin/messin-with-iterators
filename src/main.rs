@@ -3,8 +3,20 @@
 
 extern crate type_printer;
 
+use std::collections::VecDeque;
+
 fn main() {
-    // clock();
+    vec_duke_city();
+}
+
+fn vec_duke_city() {
+    let mut the_vec_duke_himself = VecDeque::new();
+    the_vec_duke_himself.push_back(1);
+    the_vec_duke_himself.push_back(7);
+    the_vec_duke_himself.push_front(6);
+    the_vec_duke_himself.push_front(4);
+    let iterator = the_vec_duke_himself.iter();
+    for i in iterator { println!("{:?}", i) }
 }
 
 fn clock() {
