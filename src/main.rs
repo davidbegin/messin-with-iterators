@@ -19,11 +19,10 @@ fn main() {
 }
 
 fn add_dem_pairs_up(vec_of_arrays: Vec<[i32; 2]>) -> Vec<i32> {
-    let mut result = vec![];
-
-    for arr in vec_of_arrays.iter() {
-        result.push(arr[0]*arr[1]);
-    }
-
+    let mut result: Vec<i32> = vec_of_arrays.iter().map(|&arr| arr[0] * arr[1]).collect();
     result
 }
+
+
+
+
