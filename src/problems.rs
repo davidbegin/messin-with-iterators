@@ -17,4 +17,12 @@ fn problem_1() {
     for x in 0..10 {
         println!("{}", x);
     }
+
+    // iterate over a range an increase each number
+    let result: Vec<i32> = (0..10).map(|i| i + 10).collect();
+    println!("{:?}", result);
+
+    // iterate over a range and filter out the even numbers
+    let result: Vec<i32> = (0..10).filter(|i| i % 2 == 0).collect();
+    println!("{:?}", result);
 }
