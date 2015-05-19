@@ -14,7 +14,7 @@ pub fn main() {
 }
 
 fn problem_1() {
-    range_problems();
+    // range_problems();
     vec_problems();
 }
 
@@ -45,11 +45,9 @@ fn vec_problems() {
     }
 
     // iterate over a vec an increate each value
-    let increased_subject: Vec<i32> = subject.iter().map(|i| i + 10).collect();
+    let increased_subject: Vec<i32> = subject.iter().map(|&i| i + 10).collect();
     println!("{:?}", increased_subject);
 
-    // iterate over a vec and filter out the odd numbers
-    // how do I make this work?
-    // let filtered_subject: Vec<i32> = subject.iter().filter(|&i| !(i % 2 == 0)).collect();
-    // println!("{:?}", filtered_subject);
+    let mut filtered_subject = subject.iter().filter(|&i| !(*i % 2 == 0));
+    println!("filtered list: {:?}", filtered_subject.collect::<Vec<&i32>>());
 }

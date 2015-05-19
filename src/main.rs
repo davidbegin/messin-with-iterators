@@ -4,9 +4,9 @@ extern crate type_printer;
 mod problems;
 
 fn main() {
+    // warmups();
     problems::title();
     problems::main();
-    warmups();
 }
 
 fn add_dem_pairs_up(vec_of_arrays: Vec<[i32; 2]>) -> Vec<i32> {
