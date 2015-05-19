@@ -39,7 +39,7 @@ fn vec_problems() {
     println!("\n~~~ Vec Problems ~~~ \n");
 
     // iterate over a vec and print off each value
-    let mut subject = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let subject = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     for x in subject.iter() {
         println!("{}", x)
     }
@@ -48,6 +48,32 @@ fn vec_problems() {
     let increased_subject: Vec<i32> = subject.iter().map(|&i| i + 10).collect();
     println!("{:?}", increased_subject);
 
-    let mut filtered_subject = subject.iter().filter(|&i| !(*i % 2 == 0));
+    // iterate over a range and filter out the odd numbers
+    let filtered_subject = increased_subject.iter().filter(|&i| !(*i % 2 == 0));
     println!("filtered list: {:?}", filtered_subject.collect::<Vec<&i32>>());
+
+    // perform the same operation with a one-liner
+    let subject = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let result = subject.iter()
+        .map(|&i| i + 10)
+        .filter(|i| !(i % 2 == 0))
+        .collect::<Vec<i32>>();
+
+    println!("filtered list: {:?}", result);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
