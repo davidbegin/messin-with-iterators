@@ -6,7 +6,8 @@ extern crate type_printer;
 // I need to build some muscle memory and a deeper understanding
 
 pub fn title() {
-    println!("\nTraining for iter Karate match\n");
+    println!("\nTraining for the iter Karate match");
+    println!("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 }
 
 pub fn main() {
@@ -61,19 +62,3 @@ fn vec_problems() {
 
     println!("filtered list: {:?}", result);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
